@@ -1,0 +1,57 @@
+/* Smooth link hover and active effect */
+.navbar .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: #f8f9fa; /* Soft white on hover */
+}
+
+/* White underline for active page */
+.navbar .nav-link.active {
+    font-weight: 600;
+    color: #fff;
+}
+
+.navbar .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Space between text and underline */
+    width: 100%;
+    height: 2px;
+    background-color: #fff; /* White underline */
+    border-radius: 2px;
+}
+
+/* Footer Link Styling */
+.footer-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #fff;
+    padding-left: 5px; /* subtle slide effect */
+}
+
+/* Social Icons */
+.footer-social {
+    color: white;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social:hover {
+    color: #FFC107; /* Bootstrap warning yellow for pop */
+    transform: translateY(-3px); /* hover lift */
+}
+
+/* Ensure contrast on green background */
+footer p,
+footer h5 {
+    color: #f8f9fa;
+}
