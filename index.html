@@ -3,232 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simba on the Beach</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Tourism Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
         /* Navbar */
         .navbar {
-            transition: background-color 0.3s ease;
+            border-bottom: 2px solid rgba(0,0,0,0.1);
+            padding: 0.5rem 1rem;
+            background: linear-gradient(90deg, #ffffff 0%, #198754 100%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
         }
-        .navbar-brand {
-            font-size: 1.3rem;
-            letter-spacing: 1px;
+        .navbar-brand { padding:0; }
+        .navbar-nav .nav-link { position: relative; color:#000; transition: color 0.3s; }
+        .navbar-nav .nav-link::after {
+            content: ''; position: absolute; width:0; height:2px; left:0; bottom:-3px; background:#198754; transition: width 0.3s;
         }
-        .nav-link {
-            margin-left: 1rem;
-            font-weight: 500;
-        }
-        .nav-link:hover,
-        .nav-link.active {
-            color: #ffc107 !important;
-        }
+        .navbar-nav .nav-link:hover::after { width:100%; }
 
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            background: url('https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+        /* Hero */
+        .hero {
+            background: url('img/hero-image.png') no-repeat center center/cover;
+            height: 100vh; display: flex; align-items: center; justify-content: flex-start;
+            color: white; position: relative;
+        }
+        .hero::before {
+            content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.45);
+        }
+        .hero-content { position:relative; max-width:650px; padding:20px; z-index:2; }
+        .hero h1 { font-size:3.5rem; font-weight:700; }
+        .hero p { font-size:1.2rem; margin:15px 0 30px; }
+        @media (max-width:991.98px) { .hero h1{font-size:2.8rem;} .hero p{font-size:1rem;} }
+        @media (max-width:575.98px) { .hero h1{font-size:2.2rem;} .hero p{font-size:0.95rem;} }
+
+        /* Welcome Section */
+        .welcome { background-color:#f8f9fa; padding:5rem 0; }
+        .welcome h2 { color:#198754; }
+        .welcome p { color:#333; }
+
+        /* Popular Destinations */
+        .destination-card { position:relative; cursor:pointer; height:300px; overflow:hidden; }
+        .destination-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.3s; }
+        .destination-card:hover img { transform: scale(1.05); }
+        .overlay-text {
+            position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.5);
+            color:#fff; text-align:left; font-weight:bold; font-size:1.1rem; padding:12px;
+            transition: background 0.3s;
+        }
+        .destination-card:hover .overlay-text { background: rgba(0,0,0,0.65); }
+        .destination-card-link { text-decoration:none; color:inherit; display:block; }
+        .popular-destinations .btn-success {
+            background: linear-gradient(90deg, #198754 0%, #28a745 100%);
+            border:none; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .popular-destinations .btn-success:hover {
+            transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        /* Features styling */
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: #fff;
-            text-align: center;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-        .btn-cta {
-            padding: 0.8rem 2rem;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: transform 0.3s ease;
-        }
-        .btn-cta:hover {
-            transform: translateY(-3px);
+            align-items: center;
         }
     </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top shadow-sm" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand fw-bold text-uppercase d-flex align-items-center" href="index.html">
-            <i class="bi bi-sun me-2 fs-4"></i> Simba on the Beach
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="img/simba-logo.png" width="40" class="me-2" alt="">
+            <span class="fw-bold text-dark">Simba on the Beach</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
-                <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item ms-lg-3"><a class="btn btn-book btn-sm px-3" href="book.html">Book Now</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<header class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container text-center">
-        <h1>Discover Your Next Adventure</h1>
-        <p>Unforgettable journeys to breathtaking destinations</p>
-        <a href="tours.html" class="btn btn-primary btn-lg btn-cta rounded-pill">Explore Tours</a>
+<!-- Hero -->
+<section class="hero">
+    <div class="container hero-content text-center text-lg-start">
+        <h1>Discover the Beauty of Tanzania</h1>
+        <p>Experience breathtaking safaris, majestic mountains, and the rich culture that makes Tanzania a must-visit destination.</p>
+        <a href="destinations.html" class="btn btn-lg btn-outline-light rounded-pill">
+            Explore Destinations <i class="bi bi-arrow-right-circle ms-2"></i>
+        </a>
     </div>
-</header>
+</section>
 
-<!-- Overview -->
-<section class="overview">
-    <h2>Welcome to GlobeTrek Tours</h2>
-    <p>
-        At <strong>GlobeTrek Tours</strong>, we craft unforgettable travel experiences
-        that connect you to nature, culture, and adventure. With a passionate team and
-        trusted partners worldwide, we make every journey seamless and extraordinary.
-    </p>
+<!-- Welcome -->
+<section class="welcome text-center text-lg-start">
+    <div class="container">
+        <h2 class="fw-bold mb-3">Welcome to Simba on the Beach</h2>
+        <p class="lead mb-4">
+            Simba on the Beach brings you the best of both worlds, wild African adventures
+            and dreamy beach escapes. Discover, relax, and create memories where
+            the wild meets the waves.
+        </p>
+        <p class="lead mb-4">
+            Discover Tanzania like never before! From thrilling safaris to serene beaches and majestic mountains,
+            our expert guides ensure every adventure is safe, memorable, and unforgettable. Let us help you create
+            experiences that last a lifetime.
+        </p>
+    </div>
 </section>
 
 <!-- Popular Destinations -->
-<section class="destinations">
-    <h2 class="section-title">Popular Destinations</h2>
+<section class="popular-destinations py-5">
     <div class="container">
+        <h2 class="fw-bold mb-2" style="color:#198754; text-align:left;">Popular Destinations</h2>
+        <p class="mb-4" style="color:#555; text-align:left;">
+            Explore some of the most breathtaking destinations in Tanzania. Click on a destination to see the available tours and plan your adventure.
+        </p>
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="destination-card">
-                    <img src="https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beach">
-                    <div class="destination-overlay">
-                        <h5>Sunny Beach</h5>
-                        <span>Maldives • 5 Days • $1200</span>
+                <a href="tours.html?id=serengeti" class="destination-card-link">
+                    <div class="card destination-card border-0">
+                        <img src="img/serengeti_03.jpg" class="card-img-top" alt="Serengeti">
+                        <div class="overlay-text p-3">Serengeti</div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-md-4">
-                <div class="destination-card">
-                    <img src="https://images.pexels.com/photos/672142/pexels-photo-672142.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mountains">
-                    <div class="destination-overlay">
-                        <h5>Misty Mountains</h5>
-                        <span>Switzerland • 7 Days • $2000</span>
+                <a href="tours.html?id=zanzibar" class="destination-card-link">
+                    <div class="card destination-card border-0">
+                        <img src="img/zanzibar_mtende.jpeg" class="card-img-top" alt="Zanzibar Beaches">
+                        <div class="overlay-text p-3">Zanzibar</div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="col-md-4">
-                <div class="destination-card">
-                    <img src="https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Desert">
-                    <div class="destination-overlay">
-                        <h5>Desert Safari</h5>
-                        <span>Dubai • 3 Days • $900</span>
+                <a href="tours.html?id=kilimanjaro" class="destination-card-link">
+                    <div class="card destination-card border-0">
+                        <img src="img/kilimanjaro_05.jpeg" class="card-img-top" alt="Mount Kilimanjaro">
+                        <div class="overlay-text p-3">Mount Kilimanjaro</div>
                     </div>
+                </a>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="destinations.html" class="btn btn-success btn-lg rounded-pill">
+                Explore More <i class="bi bi-arrow-right-circle ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="fw-bold mb-3" style="color:#198754; text-align:left;">Our Features</h2>
+        <div class="row text-center g-4">
+
+            <!-- Easy Booking -->
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4 p-4 feature-card">
+                    <div class="icon-circle mx-auto mb-3 bg-success text-white">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <h6 class="fw-bold">Easy Booking</h6>
+                    <p class="text-muted small mb-0">Quick and hassle-free reservations at your fingertips.</p>
                 </div>
             </div>
+
+            <!-- 24/7 Support -->
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4 p-4 feature-card">
+                    <div class="icon-circle mx-auto mb-3 bg-success text-white">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <h6 class="fw-bold">24/7 Support</h6>
+                    <p class="text-muted small mb-0">Always available whenever you need assistance.</p>
+                </div>
+            </div>
+
+            <!-- Local Guides -->
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4 p-4 feature-card">
+                    <div class="icon-circle mx-auto mb-3 bg-success text-white">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <h6 class="fw-bold">Local Guides</h6>
+                    <p class="text-muted small mb-0">Explore destinations with knowledgeable locals.</p>
+                </div>
+            </div>
+
+            <!-- Multilingual Support -->
+            <div class="col-md-3 col-sm-6">
+                <div class="card h-100 shadow-sm border-0 rounded-4 p-4 feature-card">
+                    <div class="icon-circle mx-auto mb-3 bg-success text-white">
+                        <i class="bi bi-translate"></i>
+                    </div>
+                    <h6 class="fw-bold">Multilingual Support</h6>
+                    <p class="text-muted small mb-0">We speak your language for a smoother experience.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-success text-light pt-5 pb-3 mt-5">
-    <div class="container">
-        <div class="row">
-            <!-- About Section -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="fw-bold text-white">Simba on the Beach</h5>
-                <p class="small">
-                    Discover breathtaking destinations, unforgettable safaris, and coastal escapes.
-                    Your adventure begins here.
-                </p>
-            </div>
+<div id="footer"></div>
 
-            <!-- Quick Links -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="fw-bold text-white">Quick Links</h5>
-                <ul class="list-unstyled small">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="destinations.html" class="footer-link">Destinations</a></li>
-                    <li><a href="tours.html" class="footer-link">Tours</a></li>
-                    <li><a href="services.html" class="footer-link">Services</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="contact.html" class="footer-link">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact & Social Media -->
-            <div class="col-lg-4 col-md-12 mb-4">
-                <h5 class="fw-bold text-white">Contact Us</h5>
-                <p class="small mb-1"><i class="bi bi-geo-alt-fill me-2"></i> Arusha, Tanzania</p>
-                <p class="small mb-1"><i class="bi bi-telephone-fill me-2"></i> +255 123 456 789</p>
-                <p class="small mb-3"><i class="bi bi-envelope-fill me-2"></i> info@simbabeach.com</p>
-
-                <!-- Social Media -->
-                <div class="d-flex">
-                    <a href="#" class="footer-social"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Bar with Dynamic Year -->
-        <div class="text-center border-top border-light pt-3 mt-3 small opacity-75">
-            © <span id="footerYear"></span> Simba on the Beach. All rights reserved.
-        </div>
-    </div>
-</footer>
-
-<!-- set the current year in footer -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
-
-<script>
-    document.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
-        if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
-    });
-</script>
-
-<script>
-    // Change navbar background on scroll
-    window.addEventListener("scroll", function () {
-        const nav = document.getElementById("mainNav");
-        if (window.scrollY > 50) {
-            nav.classList.remove("bg-transparent");
-            nav.classList.add("bg-success");
-        } else {
-            nav.classList.remove("bg-success");
-            nav.classList.add("bg-transparent");
-        }
-    });
-</script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

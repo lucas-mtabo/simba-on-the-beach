@@ -1,0 +1,174 @@
+{
+  "destinations": [
+    {
+      "id": "kilimanjaro",
+      "name": "Mount Kilimanjaro",
+      "image": "img/kilimanjaro_05.jpeg",
+      "shortDescription": "Challenge yourself with Africa's highest peak.",
+      "description": "Trek to the summit of Mount Kilimanjaro and experience breathtaking panoramic views, diverse climates, and the thrill of reaching Africa's highest point.",
+      "tours": [
+        {
+          "title": "Marangu Route - 5 days",
+          "image": "img/kilimanjaro_02.jpeg",
+          "link": "book.html?tour=marangu"
+        },
+        {
+          "title": "Machame Route 7-8 days",
+          "image": "img/kilimanjaro_04.jpeg",
+          "link": "book.html?tour=machame"
+        },
+        {
+          "title": "Lemosho Route - 8 days",
+          "image": "img/kilimanjaro_03.jpeg",
+          "link": "book.html?tour=machame"
+        }
+      ],
+      "activities": [
+        "Mountain hiking",
+        "Nature photography",
+        "Camping under the stars"
+      ]
+    },
+    {
+      "id": "serengeti",
+      "name": "Serengeti National Park",
+      "image": "img/serengeti_03.jpg",
+      "shortDescription": "Iconic wildlife and endless plains.",
+      "description": "Witness the grandeur of Africa’s wildlife in Serengeti National Park, home to lions, elephants, cheetahs, and the spectacular Great Migration.",
+      "tours": [
+        {
+          "title": "Serengeti Safari 3-5 days",
+          "image": "img/serengeti_01.jpg",
+          "link": "book.html?tour=serengeti-safari"
+        }
+      ],
+      "activities": [
+        "Bike riding",
+        "Grilling meat with Maasai",
+        "Wildlife viewing",
+        "Coffee tastings",
+        "Game drives",
+        "Experience local markets"
+      ]
+    },
+    {
+      "id": "zanzibar",
+      "name": "Zanzibar Island",
+      "image": "img/prison_island.jpeg",
+      "shortDescription": "Relax on pristine beaches and enjoy diving.",
+      "description": "Unwind on Zanzibar’s white sandy beaches, explore vibrant coral reefs, and enjoy exciting water activities like diving and surfing.",
+      "tours": [
+        {
+          "title": "Spice Tour",
+          "image": "img/zanzibar_01.jpg",
+          "link": "book.html?tour=spice"
+        },
+        {
+          "title": "Prison Island Excursion",
+          "image": "img/zanzibar_02.jpg",
+          "link": "book.html?tour=prison"
+        }
+      ],
+      "activities": [
+        "Snorkeling & diving",
+        "Beach relaxation",
+        "Surfing lessons",
+        "Island hopping",
+        "Cultural village visits"
+      ]
+    },
+    {
+      "id": "manyara",
+      "name": "Lake Manyara",
+      "image": "img/lake_manyara_02.jpeg",
+      "shortDescription": "A stunning sanctuary of flamingos and wildlife.",
+      "description": "Lake Manyara National Park offers lush scenery, large flamingo flocks, hippos, and tree-climbing lions, making it a perfect safari destination.",
+      "tours": [
+        {
+          "title": "Lake Manyara Game Drive",
+          "image": "img/manyara_01.jpg",
+          "link": "book.html?tour=manyara-drive"
+        },
+        {
+          "title": "Bird Watching Safari",
+          "image": "img/manyara_02.jpg",
+          "link": "book.html?tour=manyara-birds"
+        }
+      ],
+      "activities": [
+        "Bike riding",
+        "Grilling meat with Maasai",
+        "Wildlife viewing",
+        "Coffee tastings",
+        "Game drives",
+        "Experience local markets"
+      ]
+    },
+    {
+      "id": "tarangire",
+      "name": "Tarangire National Park",
+      "image": "img/tarangire_01.jpeg",
+      "shortDescription": "Majestic elephants and scenic landscapes.",
+      "description": "Home to large elephant herds and diverse wildlife, Tarangire National Park features scenic river landscapes and baobab-studded plains.",
+      "tours": [
+        {
+          "title": "Tarangire Safari Tour",
+          "image": "img/tarangire_02.jpg",
+          "link": "book.html?tour=tarangire-safari"
+        }
+      ],
+      "activities": [
+        "Bike riding",
+        "Grilling meat with Maasai",
+        "Wildlife viewing",
+        "Coffee tastings",
+        "Game drives",
+        "Experience local markets"
+      ]
+    },
+    {
+      "id": "natron",
+      "name": "Lake Natron",
+      "image": "img/lake_natron.jpeg",
+      "shortDescription": "Famous for vivid red waters and flamingos.",
+      "description": "Lake Natron is renowned for its striking red waters and vast flocks of flamingos, set against dramatic volcanic scenery.",
+      "tours": [
+        {
+          "title": "Lake Natron Flamingo Tour",
+          "image": "img/natron_01.jpg",
+          "link": "book.html?tour=natron-flamingo"
+        }
+      ],
+      "activities": [
+        "Bike riding",
+        "Grilling meat with Maasai",
+        "Wildlife viewing",
+        "Coffee tastings",
+        "Game drives",
+        "Experience local markets"
+      ]
+    },
+    {
+      "id": "ngorongoro",
+      "name": "Ngorongoro Crater",
+      "image": "img/ngorongoro_02.jpeg",
+      "shortDescription": "Where humans and wildlife coexist beautifully.",
+      "description": "The Ngorongoro Crater is a unique ecosystem where humans live alongside wildlife in a breathtaking volcanic landscape.",
+      "tours": [
+        {
+          "title": "Crater Game Drive",
+          "image": "img/ngorongoro_01.jpg",
+          "link": "book.html?tour=ngorongoro-drive"
+        }
+      ],
+      "activities": [
+        "Bike riding",
+        "Grilling meat with Maasai",
+        "Wildlife viewing",
+        "Coffee tastings",
+        "Game drives",
+        "Experience local markets"
+      ]
+    }
+  ]
+}

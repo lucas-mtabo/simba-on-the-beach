@@ -75,48 +75,11 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
-    <div class="container">
-        <!-- Brand Logo / Name -->
-        <a class="navbar-brand fw-bold text-uppercase" href="index.html">
-            <i class="bi bi-sun me-2"></i>Simba on the Beach
-        </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menu Items -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="destinations.html">Destinations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="tours.html">Tours</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div id="navbar"></div>
 
 
 <!-- Contact Section -->
-<section class="py-5">
+<main class="bg-light py-5">
     <div class="container">
         <div class="row g-5 align-items-start">
 
@@ -133,7 +96,7 @@
                         </div>
                         <div>
                             <h6 class="fw-bold mb-1">Phone</h6>
-                            <p class="mb-0 text-muted">+255 700 123 456<br>+255 713 987 654</p>
+                            <p class="mb-0 text-muted">+255 785 265 162</p>
                         </div>
                     </div>
 
@@ -144,7 +107,7 @@
                         </div>
                         <div>
                             <h6 class="fw-bold mb-1">Email</h6>
-                            <p class="mb-0 text-muted">info@greentours.com</p>
+                            <p class="mb-0 text-muted">info@simbabeach.com</p>
                         </div>
                     </div>
 
@@ -159,107 +122,44 @@
                         </div>
                     </div>
 
-                    <!-- Social Media Row -->
-                    <div class="d-flex social-row">
-                        <a href="https://www.facebook.com/simbaonthebeach" target="_blank" class="social-icon">
-                            <i class="bi bi-facebook"></i> <span class="social-text facebook">simbaonthebeach</span>
-                        </a>
-                        <a href="https://www.twitter.com/simbaonthebeach" target="_blank" class="social-icon">
-                            <i class="bi bi-twitter"></i> <span class="social-text twitter">simbaonthebeach</span>
-                        </a>
-                        <a href="https://www.instagram.com/simbaonthebeach" target="_blank" class="social-icon">
-                            <i class="bi bi-instagram"></i> <span class="social-text instagram">simbaonthebeach</span>
-                        </a>
-                        <a href="https://www.tiktok.com/@simbaonthebeach" target="_blank" class="social-icon">
-                            <i class="bi bi-tiktok"></i> <span class="social-text tiktok">simbaonthebeach</span>
-                        </a>
-                    </div>
                 </div>
             </div>
 
             <!-- Right Column: Contact Form -->
+            <!-- Right Column: Social Media Links -->
             <div class="col-md-6">
                 <div class="card shadow-sm border-0 rounded-3">
                     <div class="card-body p-5">
-                        <h5 class="card-title mb-4 text-success">Send Us a Message</h5>
-                        <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control bg-light" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control bg-light" id="email" placeholder="Enter your email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control bg-light" id="message" rows="4" placeholder="Enter your message"></textarea>
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-success">Send Message</button>
-                            </div>
-                        </form>
+                        <h5 class="card-title mb-4 text-success">Connect with Us</h5>
+
+                        <div class="d-flex flex-column gap-3">
+                            <a href="https://www.facebook.com/simbaonthebeach" target="_blank" class="social-icon">
+                                <i class="bi bi-facebook"></i> <span class="social-text facebook">simbaonthebeach</span>
+                            </a>
+                            <a href="https://www.twitter.com/simbaonthebeach" target="_blank" class="social-icon">
+                                <i class="bi bi-twitter"></i> <span class="social-text twitter">simbaonthebeach</span>
+                            </a>
+                            <a href="https://www.instagram.com/simbaonthebeach" target="_blank" class="social-icon">
+                                <i class="bi bi-instagram"></i> <span class="social-text instagram">simbaonthebeach</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@simbaonthebeach" target="_blank" class="social-icon">
+                                <i class="bi bi-tiktok"></i> <span class="social-text tiktok">simbaonthebeach</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
+
         </div>
     </div>
-</section>
+</main>
 
 <!-- Footer -->
-<footer class="bg-success text-light pt-5 pb-3 mt-5">
-    <div class="container">
-        <div class="row">
-            <!-- About Section -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="fw-bold text-white">Simba on the Beach</h5>
-                <p class="small">
-                    Discover breathtaking destinations, unforgettable safaris, and coastal escapes.
-                    Your adventure begins here.
-                </p>
-            </div>
+<div id="footer"></div>
 
-            <!-- Quick Links -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="fw-bold text-white">Quick Links</h5>
-                <ul class="list-unstyled small">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="destinations.html" class="footer-link">Destinations</a></li>
-                    <li><a href="tours.html" class="footer-link">Tours</a></li>
-                    <li><a href="services.html" class="footer-link">Services</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="contact.html" class="footer-link">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact & Social Media -->
-            <div class="col-lg-4 col-md-12 mb-4">
-                <h5 class="fw-bold text-white">Contact Us</h5>
-                <p class="small mb-1"><i class="bi bi-geo-alt-fill me-2"></i> Arusha, Tanzania</p>
-                <p class="small mb-1"><i class="bi bi-telephone-fill me-2"></i> +255 123 456 789</p>
-                <p class="small mb-3"><i class="bi bi-envelope-fill me-2"></i> info@simbabeach.com</p>
-
-                <!-- Social Media -->
-                <div class="d-flex">
-                    <a href="#" class="footer-social"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Bar with Dynamic Year -->
-        <div class="text-center border-top border-light pt-3 mt-3 small opacity-75">
-            © <span id="footerYear"></span> Simba on the Beach. All rights reserved.
-        </div>
-    </div>
-</footer>
-
-<!-- set the current year in footer -->
+<!-- sets the footer and navbar -->
 <script src="js/script.js"></script>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

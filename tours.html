@@ -3,299 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tours - Green Tours</title>
+    <title>Destination Details - Simba on the Beach</title>
+
+    <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .card {
-            border: none;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-        .card-img-container {
+        /* Hero */
+        .hero {
             position: relative;
-        }
-        .card-img-container img {
-            height: 220px;
-            object-fit: cover;
-            width: 100%;
-        }
-        .card-title-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            padding: 10px 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .btn-green {
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-        }
-        .btn-green:hover {
-            background-color: #218838;
-        }
-        .tour-details li {
-            display: flex;
-            align-items: center;
-            font-size: 0.95rem;
-        }
-        .tour-details i {
-            font-size: 1.2rem;
-            color: #28a745;
-            margin-right: 6px;
+            height: clamp(250px, 35vh, 400px); /* min 250px, max 400px, scales with viewport */
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
         }
 
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+            transition: transform 0.5s;
+        }
+
+        .hero:hover img {
+            transform: scale(1.05); /* subtle zoom on hover */
+        }
+
+        .hero-text {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            color: #fff;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem); /* responsive font size */
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: clamp(0.9rem, 2vw, 1.1rem); /* responsive font size */
+            margin-top: 0.5rem;
+        }
+
+
+        /* Activities */
+        .activities-section h3 {
+            margin-bottom: 1rem;
+        }
+        .activity-card {
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: #fff;
+            padding: 1rem;
+            text-align: center;
+            height: 100%;
+        }
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .activity-card i {
+            font-size: 2rem;
+            color: #28a745;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tours */
+        .tour-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .tour-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        .tour-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .title-overlay {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.55);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .title-overlay h5 {
+            margin: 0;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+        }
+        /* Destination description card */
+        .card-body p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
     <div class="container">
-        <!-- Brand Logo / Name -->
         <a class="navbar-brand fw-bold text-uppercase" href="index.html">
-            <i class="bi bi-sun me-2"></i>Simba on the Beach
+            <img src="img/simba-logo.png" alt="" width="40" class="me-2">
+            <span class="fw-bold text-light">Simba on the Beach</span>
         </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- Menu Items -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="destinations.html">Destinations</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="tours.html">Tours</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </nav>
 
-<!-- Header Section -->
-<div class="bg-success text-white text-center py-4">
+<!-- Breadcrumb -->
+<nav aria-label="breadcrumb" class="bg-light py-2 mb-2">
     <div class="container">
-        <h1 class="display-5 fw-bold mb-3">Our Tours</h1>
-        <p class="lead">Explore the best experiences and adventures we offer</p>
+        <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="destinations.html" class="text-decoration-none">Destinations</a></li>
+            <li class="breadcrumb-item active text-success" id="breadcrumb-destination">Loading...</li>
+        </ol>
     </div>
-</div>
+</nav>
 
-<!-- Tours Grid -->
-<div class="container py-5">
-    <div class="row g-4 mb-5">
+<main class="py-5">
+    <div class="container" id="destination-content">
+        <!-- Hero Section -->
+        <div class="hero" id="hero-section">
+            <img src="" alt="Destination Image" id="hero-image">
+            <div class="hero-text">
+                <h1 id="hero-title"></h1>
+                <p id="hero-subtitle"></p>
+            </div>
+        </div>
 
-        <!-- Tour Card -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-img-container">
-                    <img src="img/kilimanjaro.jpg" alt="Kilimanjaro Safari">
-                    <div class="card-title-overlay">Kilimanjaro Safari</div>
-                </div>
+        <!-- Description -->
+        <div class="mb-5">
+            <div class="card shadow-sm border-0">
                 <div class="card-body">
-                    <p class="card-text">Experience the beauty of African wildlife on a guided safari tour.</p>
-                    <ul class="list-unstyled tour-details mb-3">
-                        <li class="d-flex justify-content-between">
-                            <span><i class="bi bi-clock"></i>7 Days</span>
-                            <span><i class="bi bi-cash-stack"></i>$1,200</span>
-                        </li>
-                        <li><i class="bi bi-geo-alt"></i>Serengeti National Park</li>
-                    </ul>
-                    <a href="book.html" class="btn btn-green w-100">View Details</a>
+                    <p id="destination-description" class="mb-0"></p>
                 </div>
             </div>
         </div>
 
-        <!-- Tour Card -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-img-container">
-                    <img src="img/beach2.jpg" alt="zanzibar">
-                    <div class="card-title-overlay">A Week in Zanzibar</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Relax on pristine beaches and enjoy crystal-clear waters.</p>
-                    <ul class="list-unstyled tour-details mb-3">
-                        <li class="d-flex justify-content-between">
-                            <span><i class="bi bi-clock"></i>7 Days</span>
-                            <span><i class="bi bi-cash-stack"></i>$900</span>
-                        </li>
-                        <li><i class="bi bi-geo-alt"></i>Zanzibar</li>
-                    </ul>
-                    <a href="book.html" class="btn btn-green w-100">View Details</a>
-                </div>
+        <!-- Activities Section -->
+        <div class="activities-section mb-5">
+            <h3 class="text-success">Activities</h3>
+            <div class="row g-3" id="activities-list">
+                <!-- Activities will be dynamically loaded here -->
             </div>
         </div>
 
-        <!-- Tour Card -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-img-container">
-                    <img src="img/giraffe.jpg" alt="The Great Migration">
-                    <div class="card-title-overlay">The Great Migration</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Challenge yourself with a trek to Africa's highest peak.</p>
-                    <ul class="list-unstyled tour-details mb-3">
-                        <li class="d-flex justify-content-between">
-                            <span><i class="bi bi-clock"></i>8 Days</span>
-                            <span><i class="bi bi-cash-stack"></i>$1,500</span>
-                        </li>
-                        <li><i class="bi bi-geo-alt"></i>Mount Kilimanjaro</li>
-                    </ul>
-                    <a href="book.html" class="btn btn-green w-100">View Details</a>
-                </div>
+        <!-- Tours Section -->
+        <div class="tours-section">
+            <h3 class="text-success">Available Packages</h3>
+            <p class="text-muted mb-4">Choose from our curated tours for this destination.</p>
+            <div class="row g-4" id="tour-list">
+                <!-- Tours will be dynamically loaded here -->
             </div>
         </div>
-
     </div>
-
-    <div class="row g-4">
-
-        <!-- Tour Card -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-img-container">
-                    <img src="img/lion2.jpg" alt="Kilimanjaro Safari">
-                    <div class="card-title-overlay">Serengeti</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Experience the beauty of African wildlife on a guided safari tour.</p>
-                    <ul class="list-unstyled tour-details mb-3">
-                        <li class="d-flex justify-content-between">
-                            <span><i class="bi bi-clock"></i>7 Days</span>
-                            <span><i class="bi bi-cash-stack"></i>$1,200</span>
-                        </li>
-                        <li><i class="bi bi-geo-alt"></i>Serengeti National Park</li>
-                    </ul>
-                    <a href="book.html" class="btn btn-green w-100">View Details</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tour Card -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-img-container">
-                    <img src="img/rhino.jpg" alt="zanzibar">
-                    <div class="card-title-overlay">Mikumi National Park</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Relax on pristine beaches and enjoy crystal-clear waters.</p>
-                    <ul class="list-unstyled tour-details mb-3">
-                        <li class="d-flex justify-content-between">
-                            <span><i class="bi bi-clock"></i>7 Days</span>
-                            <span><i class="bi bi-cash-stack"></i>$900</span>
-                        </li>
-                        <li><i class="bi bi-geo-alt"></i>Zanzibar</li>
-                    </ul>
-                    <a href="book.html" class="btn btn-green w-100">View Details</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tour Card -->
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-img-container">
-                    <img src="img/ngorongoro.jpg" alt="The Great Migration">
-                    <div class="card-title-overlay">Ngorongoro Crater</div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Challenge yourself with a trek to Africa's highest peak.</p>
-                    <ul class="list-unstyled tour-details mb-3">
-                        <li class="d-flex justify-content-between">
-                            <span><i class="bi bi-clock"></i>8 Days</span>
-                            <span><i class="bi bi-cash-stack"></i>$1,500</span>
-                        </li>
-                        <li><i class="bi bi-geo-alt"></i>Mount Kilimanjaro</li>
-                    </ul>
-                    <a href="book.html" class="btn btn-green w-100">View Details</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
+</main>
 
 <!-- Footer -->
-<footer class="bg-success text-light pt-5 pb-3 mt-5">
-    <div class="container">
-        <div class="row">
-            <!-- About Section -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="fw-bold text-white">Simba on the Beach</h5>
-                <p class="small">
-                    Discover breathtaking destinations, unforgettable safaris, and coastal escapes.
-                    Your adventure begins here.
-                </p>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <h5 class="fw-bold text-white">Quick Links</h5>
-                <ul class="list-unstyled small">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="destinations.html" class="footer-link">Destinations</a></li>
-                    <li><a href="tours.html" class="footer-link">Tours</a></li>
-                    <li><a href="services.html" class="footer-link">Services</a></li>
-                    <li><a href="about.html" class="footer-link">About</a></li>
-                    <li><a href="contact.html" class="footer-link">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact & Social Media -->
-            <div class="col-lg-4 col-md-12 mb-4">
-                <h5 class="fw-bold text-white">Contact Us</h5>
-                <p class="small mb-1"><i class="bi bi-geo-alt-fill me-2"></i> Arusha, Tanzania</p>
-                <p class="small mb-1"><i class="bi bi-telephone-fill me-2"></i> +255 123 456 789</p>
-                <p class="small mb-3"><i class="bi bi-envelope-fill me-2"></i> info@simbabeach.com</p>
-
-                <!-- Social Media -->
-                <div class="d-flex">
-                    <a href="#" class="footer-social"><i class="bi bi-facebook"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-instagram"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-twitter-x"></i></a>
-                    <a href="#" class="footer-social"><i class="bi bi-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Bottom Bar with Dynamic Year -->
-        <div class="text-center border-top border-light pt-3 mt-3 small opacity-75">
-            © <span id="footerYear"></span> Simba on the Beach. All rights reserved.
-        </div>
-    </div>
+<footer class="text-center py-3 mt-5 bg-success text-white">
+    <p class="mb-0">&copy; <span id="minFooterYear"></span> Simba on the Beach. All rights reserved.</p>
 </footer>
 
-<!-- set the current year in footer -->
+<!-- Scripts -->
 <script src="js/script.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const destinationId = urlParams.get("id") || "serengeti";
+
+        fetch("data.json")
+            .then(res => res.json())
+            .then(data => {
+                const destination = data.destinations.find(d => d.id === destinationId);
+
+                if (!destination) {
+                    document.getElementById("destination-content").innerHTML =
+                        "<p class='text-danger'>Destination not found.</p>";
+                    return;
+                }
+
+                // Breadcrumb
+                document.getElementById("breadcrumb-destination").textContent = destination.name;
+
+                // Hero Section
+                document.getElementById("hero-image").src = destination.image;
+                document.getElementById("hero-image").alt = destination.name;
+                document.getElementById("hero-title").textContent = destination.name;
+                document.getElementById("hero-subtitle").textContent = destination.shortDescription;
+
+                // Description
+                document.getElementById("destination-description").textContent = destination.description;
+
+                // Activities
+                const activitiesContainer = document.getElementById("activities-list");
+                activitiesContainer.innerHTML = destination.activities.map(act => `
+            <div class="col-md-4">
+              <div class="activity-card">
+                <i class="bi bi-check-circle"></i>
+                <p class="mb-0">${act}</p>
+              </div>
+            </div>
+          `).join("");
+
+                // Tours
+                const toursContainer = document.getElementById("tour-list");
+                toursContainer.innerHTML = destination.tours.map(tour => `
+            <div class="col-md-6 col-lg-4">
+              <a href="${tour.link}" class="text-decoration-none">
+                <div class="tour-card border-0 shadow-sm overflow-hidden">
+                  <div class="position-relative">
+                    <img src="${tour.image}" class="tour-img" alt="${tour.title}">
+                    <div class="title-overlay">
+                      <h5>${tour.title}</h5>
+                      <i class="bi bi-arrow-right-circle text-white fs-5 ms-2"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          `).join("");
+            })
+            .catch(err => {
+                console.error("Error loading data.json:", err);
+                document.getElementById("destination-content").innerHTML =
+                    "<p class='text-danger'>Failed to load destination details.</p>";
+            });
+    });
+</script>
 </body>
 </html>
