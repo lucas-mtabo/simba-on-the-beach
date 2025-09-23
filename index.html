@@ -37,6 +37,16 @@
         @media (max-width:991.98px) { .hero h1{font-size:2.8rem;} .hero p{font-size:1rem;} }
         @media (max-width:575.98px) { .hero h1{font-size:2.2rem;} .hero p{font-size:0.95rem;} }
 
+        /* Buttons */
+        .btn-book {
+            border-radius:25px; padding:12px 28px; font-weight:600; color:#fff;
+            background: linear-gradient(90deg, #198754 0%, #28a745 100%);
+            border:none; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-book:hover {
+            transform: translateY(-2px); box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
         /* Welcome Section */
         .welcome { background-color:#f8f9fa; padding:5rem 0; }
         .welcome h2 { color:#198754; }
@@ -98,7 +108,7 @@
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item ms-lg-3"><a class="btn btn-book btn-sm px-3" href="book.html">Book Now</a></li>
+                <li class="nav-item ms-lg-3"><a class="btn btn-book btn-sm px-3" href="book.php">Book Now</a></li>
             </ul>
         </div>
     </div>
@@ -135,10 +145,12 @@
 <!-- Popular Destinations -->
 <section class="popular-destinations py-5">
     <div class="container">
-        <h2 class="fw-bold mb-2" style="color:#198754; text-align:left;">Popular Destinations</h2>
-        <p class="mb-4" style="color:#555; text-align:left;">
-            Explore some of the most breathtaking destinations in Tanzania. Click on a destination to see the available tours and plan your adventure.
+        <h2 class="fw-bold mb-2 text-success text-center">Popular Destinations</h2>
+        <p class="mb-4 text-muted text-center">
+            Explore some of the most breathtaking destinations in Tanzania.
         </p>
+        <hr class="mx-auto mb-4" style="width: 60px; border-top: 2px solid #28a745; opacity: 0.5;">
+
         <div class="row g-4">
             <div class="col-md-4">
                 <a href="tours.html?id=serengeti" class="destination-card-link">
@@ -151,7 +163,7 @@
             <div class="col-md-4">
                 <a href="tours.html?id=zanzibar" class="destination-card-link">
                     <div class="card destination-card border-0">
-                        <img src="img/zanzibar_mtende.jpeg" class="card-img-top" alt="Zanzibar Beaches">
+                        <img src="img/zanzibar_mtende_01.jpeg" class="card-img-top" alt="Zanzibar Beaches">
                         <div class="overlay-text p-3">Zanzibar</div>
                     </div>
                 </a>
@@ -176,7 +188,12 @@
 <!-- Features Section -->
 <section class="py-5 bg-light">
     <div class="container">
-        <h2 class="fw-bold mb-3" style="color:#198754; text-align:left;">Our Features</h2>
+        <h2 class="fw-bold mb-3 text-center text-success">Our Features</h2>
+        <p class="mb-4 text-muted text-center">
+            Everything you need for the perfect safari.
+        </p>
+        <hr class="mx-auto mb-4" style="width: 60px; border-top: 2px solid #28a745; opacity: 0.5;">
+
         <div class="row text-center g-4">
 
             <!-- Easy Booking -->

@@ -120,11 +120,27 @@
             line-height: 1.7;
             color: #555;
         }
+
+        /* Card hover effect */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button hover effect */
+        .btn-hover {
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-hover:hover {
+            transform: scale(1.05);
+            background-color: #28a745cc; /* slightly lighter green */
+        }
     </style>
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
     <div class="container">
         <a class="navbar-brand fw-bold text-uppercase" href="index.html">
             <img src="img/simba-logo.png" alt="" width="40" class="me-2">
@@ -134,10 +150,16 @@
 </nav>
 
 <!-- Breadcrumb -->
-<nav aria-label="breadcrumb" class="bg-light py-2 mb-2">
+<nav aria-label="breadcrumb" class="bg-light py-2 mb-2 sticky-top">
     <div class="container">
         <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="destinations.html" class="text-decoration-none">Destinations</a></li>
+            <li class="breadcrumb-item">
+                <a href="destinations.html" class="text-decoration-none d-flex align-items-center">
+                    <i class="bi bi-arrow-left-circle me-1"></i>
+                    Destinations
+                </a>
+            </li>
+
             <li class="breadcrumb-item active text-success" id="breadcrumb-destination">Loading...</li>
         </ol>
     </div>
@@ -163,20 +185,23 @@
             </div>
         </div>
 
-        <!-- Activities Section -->
-        <div class="activities-section mb-5">
-            <h3 class="text-success">Activities</h3>
-            <div class="row g-3" id="activities-list">
-                <!-- Activities will be dynamically loaded here -->
+        <!-- Tours Section -->
+        <div class="tours-section mb-5">
+            <h3 class="text-success text-center">Available Packages</h3>
+            <p class="text-muted mb-3 text-center">Choose from our curated tours for this destination.</p>
+            <hr class="mx-auto mb-4" style="width: 60px; border-top: 2px solid #28a745; opacity: 0.5;">
+            <div class="row g-4" id="tour-list">
+                <!-- Tours will be dynamically loaded here -->
             </div>
         </div>
 
-        <!-- Tours Section -->
-        <div class="tours-section">
-            <h3 class="text-success">Available Packages</h3>
-            <p class="text-muted mb-4">Choose from our curated tours for this destination.</p>
-            <div class="row g-4" id="tour-list">
-                <!-- Tours will be dynamically loaded here -->
+        <!-- Activities Section -->
+        <div class="activities-section ">
+            <h3 class="text-success text-center">Activities</h3>
+            <p class="text-muted mb-3 text-center">Experience the best this destination has to offer.</p>
+            <hr class="mx-auto mb-4" style="width: 60px; border-top: 2px solid #28a745; opacity: 0.5;">
+            <div class="row g-3" id="activities-list">
+                <!-- Activities will be dynamically loaded here -->
             </div>
         </div>
     </div>
@@ -222,30 +247,33 @@
                 // Activities
                 const activitiesContainer = document.getElementById("activities-list");
                 activitiesContainer.innerHTML = destination.activities.map(act => `
-            <div class="col-md-4">
-              <div class="activity-card">
-                <i class="bi bi-check-circle"></i>
-                <p class="mb-0">${act}</p>
-              </div>
-            </div>
+                  <div class="col-12 col-md-4">
+                      <div class="activity-card d-flex align-items-center p-2 border rounded shadow-sm">
+                        <i class="bi bi-check-circle text-success me-2"></i>
+                        <p class="mb-0 small">${act}</p>
+                      </div>
+                </div>
           `).join("");
 
                 // Tours
                 const toursContainer = document.getElementById("tour-list");
                 toursContainer.innerHTML = destination.tours.map(tour => `
-            <div class="col-md-6 col-lg-4">
-              <a href="${tour.link}" class="text-decoration-none">
-                <div class="tour-card border-0 shadow-sm overflow-hidden">
-                  <div class="position-relative">
-                    <img src="${tour.image}" class="tour-img" alt="${tour.title}">
-                    <div class="title-overlay">
-                      <h5>${tour.title}</h5>
-                      <i class="bi bi-arrow-right-circle text-white fs-5 ms-2"></i>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                      <div class="card h-100 shadow-sm border-0 overflow-hidden rounded" style="transition: transform 0.3s, box-shadow 0.3s;">
+                        <!-- Image with fixed height -->
+                        <img src="${tour.image}" class="card-img-top rounded-top img-hover" alt="${tour.title}"
+                             style="height: 220px; object-fit: cover; width: 100%; transition: transform 0.3s;">
+
+                        <!-- Card body -->
+                        <div class="card-body d-flex flex-column">
+                          <h5 class="card-title">${tour.title}</h5>
+                          <p class="card-text flex-grow-1">
+                            <!-- Optional description -->
+                          </p>
+                          <a href="${tour.link}" class="btn btn-success btn-hover mt-2">Book Now</a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </a>
-            </div>
           `).join("");
             })
             .catch(err => {

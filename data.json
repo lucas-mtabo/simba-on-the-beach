@@ -10,23 +10,27 @@
         {
           "title": "Marangu Route - 5 days",
           "image": "img/kilimanjaro_02.jpeg",
-          "link": "book.html?tour=marangu"
+          "link": "book.html?tour=kilimanjaro-marangu-route"
         },
         {
           "title": "Machame Route 7-8 days",
           "image": "img/kilimanjaro_04.jpeg",
-          "link": "book.html?tour=machame"
+          "link": "book.html?tour=kilimanjaro-machame-route"
         },
         {
           "title": "Lemosho Route - 8 days",
           "image": "img/kilimanjaro_03.jpeg",
-          "link": "book.html?tour=machame"
+          "link": "book.html?tour=kilimanjaro-lemosho-route"
         }
       ],
       "activities": [
         "Mountain hiking",
+        "Bike riding",
         "Nature photography",
-        "Camping under the stars"
+        "Camping under the stars",
+        "Photography treks",
+        "Flora and fauna tours",
+        "Visit Chagga villages"
       ]
     },
     {
@@ -37,44 +41,100 @@
       "description": "Witness the grandeur of Africa’s wildlife in Serengeti National Park, home to lions, elephants, cheetahs, and the spectacular Great Migration.",
       "tours": [
         {
-          "title": "Serengeti Safari 3-5 days",
+          "title": "Serengeti Safari",
           "image": "img/serengeti_01.jpg",
           "link": "book.html?tour=serengeti-safari"
         }
       ],
       "activities": [
-        "Bike riding",
+        "Game drives",
         "Grilling meat with Maasai",
+        "Great migration viewing",
         "Wildlife viewing",
         "Coffee tastings",
-        "Game drives",
+        "Scenic picnic spots",
+        "Lodge based relaxation",
+        "Star gazing",
         "Experience local markets"
       ]
     },
     {
       "id": "zanzibar",
       "name": "Zanzibar Island",
-      "image": "img/prison_island.jpeg",
+      "image": "img/zanzibar_pungume_island.jpeg",
       "shortDescription": "Relax on pristine beaches and enjoy diving.",
       "description": "Unwind on Zanzibar’s white sandy beaches, explore vibrant coral reefs, and enjoy exciting water activities like diving and surfing.",
       "tours": [
         {
-          "title": "Spice Tour",
-          "image": "img/zanzibar_01.jpg",
-          "link": "book.html?tour=spice"
+          "title": "Stone town tour",
+          "image": "img/zanzibar_stone_town.jpeg",
+          "link": "book.html?tour=zanzibar-stone-town"
         },
         {
-          "title": "Prison Island Excursion",
-          "image": "img/zanzibar_02.jpg",
-          "link": "book.html?tour=prison"
+          "title": "Prison Island",
+          "image": "img/zanzibar_prison_island.jpeg",
+          "link": "book.html?tour=zanzibar-prison-island"
+        },
+        {
+          "title": "Spice farm and Jozani forest",
+          "image": "img/zanzibar_jozani_03.jpeg",
+          "link": "book.html?tour=zanzibar-spice-farm-&-jozani-forest"
+        },
+        {
+          "title": "Butterfly center",
+          "image": "img/zanzibar_butterfly_centre.jpeg",
+          "link": "book.html?tour=zanzibar-butterfly-centre"
+        },
+        {
+          "title": "Snorkeling and diving in Mnemba",
+          "image": "img/zanzibar_mnemba.jpeg",
+          "link": "book.html?tour=zanzibar-mnemba-beach"
+        },
+        {
+          "title": "Snorkeling and Dolphin tours in Kizimkazi",
+          "image": "img/zanzibar_kizimkazi_02.jpeg",
+          "link": "book.html?tour=zanzibar-kizimkazi"
+        },
+        {
+          "title": "Kuza cave",
+          "image": "img/zanzibar_kuza_cave.jpeg",
+          "link": "book.html?tour=zanzibar-kuza-cave"
+        },
+        {
+          "title": "Salaam cave aquarium",
+          "image": "img/zanzibar_salaam_cave.jpeg",
+          "link": "book.html?tour=zanzibar-salaam-cave"
+        },
+        {
+          "title": "Pungume Island (Safari Blue) full day tour",
+          "image": "img/zanzibar_pungume_island.jpeg",
+          "link": "book.html?tour=zanzibar-pungume-island"
+        },
+        {
+          "title": "Mtende beach half day tour",
+          "image": "img/zanzibar_mtende_02.jpeg",
+          "link": "book.html?tour=zanzibar-mtende"
+        },
+        {
+          "title": "Kite surfing in Paje",
+          "image": "img/zanzibar_paje.jpg",
+          "link": "book.html?tour=zanzibar-paje"
         }
       ],
       "activities": [
+        "Cultural village visits",
         "Snorkeling & diving",
+        "Local shops visit",
         "Beach relaxation",
+        "Horse riding in beach",
+        "Boat cruise day tour",
+        "Quad bike adventure",
+        "Underwater walking experience",
         "Surfing lessons",
         "Island hopping",
-        "Cultural village visits"
+        "Kayaking",
+        "Sky diving",
+        "Scuba diving"
       ]
     },
     {
@@ -85,22 +145,22 @@
       "description": "Lake Manyara National Park offers lush scenery, large flamingo flocks, hippos, and tree-climbing lions, making it a perfect safari destination.",
       "tours": [
         {
-          "title": "Lake Manyara Game Drive",
-          "image": "img/manyara_01.jpg",
-          "link": "book.html?tour=manyara-drive"
-        },
-        {
-          "title": "Bird Watching Safari",
-          "image": "img/manyara_02.jpg",
-          "link": "book.html?tour=manyara-birds"
+          "title": "Lake Manyara safari",
+          "image": "img/lake_manyara_04.jpeg",
+          "link": "book.html?tour=lake-manyara"
         }
       ],
       "activities": [
-        "Bike riding",
         "Grilling meat with Maasai",
         "Wildlife viewing",
         "Coffee tastings",
         "Game drives",
+        "Hippo & Crocodile viewing",
+        "Guided Nature walks",
+        "Tree-Climbing Lions spotting",
+        "Bird Watching",
+        "Boat Safaris",
+        "Sunset viewing points",
         "Experience local markets"
       ]
     },
@@ -113,16 +173,19 @@
       "tours": [
         {
           "title": "Tarangire Safari Tour",
-          "image": "img/tarangire_02.jpg",
-          "link": "book.html?tour=tarangire-safari"
+          "image": "img/tarangire_05.jpeg",
+          "link": "book.html?tour=tarangire-national-park"
         }
       ],
       "activities": [
-        "Bike riding",
+        "Baobab tree exploration",
         "Grilling meat with Maasai",
         "Wildlife viewing",
         "Coffee tastings",
+        "Guided nature walks",
+        "Hippo & Crocodile viewing",
         "Game drives",
+        "Bird watching",
         "Experience local markets"
       ]
     },
@@ -134,18 +197,24 @@
       "description": "Lake Natron is renowned for its striking red waters and vast flocks of flamingos, set against dramatic volcanic scenery.",
       "tours": [
         {
-          "title": "Lake Natron Flamingo Tour",
-          "image": "img/natron_01.jpg",
-          "link": "book.html?tour=natron-flamingo"
+          "title": "Lake Natron tour",
+          "image": "img/lake_natron_01.jpg",
+          "link": "book.html?tour=lake-natron"
         }
       ],
       "activities": [
-        "Bike riding",
+        "Experience local markets",
         "Grilling meat with Maasai",
         "Wildlife viewing",
         "Coffee tastings",
         "Game drives",
-        "Experience local markets"
+        "Hippo & Crocodile viewing",
+        "Walking safari to waterfalls",
+        "Tree-Climbing Lions spotting",
+        "Volcano & crater exploration",
+        "Hiking adn Trekking",
+        "Bird Watching",
+        "Sunset viewing points"
       ]
     },
     {
@@ -156,16 +225,19 @@
       "description": "The Ngorongoro Crater is a unique ecosystem where humans live alongside wildlife in a breathtaking volcanic landscape.",
       "tours": [
         {
-          "title": "Crater Game Drive",
-          "image": "img/ngorongoro_01.jpg",
-          "link": "book.html?tour=ngorongoro-drive"
+          "title": "Ngorongoro Crater Game Drive",
+          "image": "img/ngorongoro_02.jpeg",
+          "link": "book.html?tour=ngorongoro crater"
         }
       ],
       "activities": [
-        "Bike riding",
+        "Visit Maasai Villages",
         "Grilling meat with Maasai",
+        "Cultural tours & crafts",
         "Wildlife viewing",
         "Coffee tastings",
+        "Guided nature walks",
+        "Crater rim hike",
         "Game drives",
         "Experience local markets"
       ]
